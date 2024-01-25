@@ -38,13 +38,11 @@ export abstract class Vec2 {
 }
 
 // same base types
-type Trait<Payload, Kind extends string> = {
-    __kind: Kind;
-} & Payload;
-
 type Kind<K extends string> = {
     __kind: K;
 };
+
+type Trait<Payload, K extends Kind<string>> = K & Payload;
 
 type TraitsMap<Traits extends any[]> = Traits extends Trait<any, any>[]
     ? {
@@ -102,7 +100,7 @@ export type Mutator2<Traits extends Trait<any, any>[]> = <
     dot2: Dot<T2>,
 ) => [Dot<T1>, Dot<T2>];
 
-// test applicators 
+// test applicators
 export const applyVelocity2d: Mutator1<[TraitPosition2d, TraitVelocity2d]> = (
     dot,
 ) => {
