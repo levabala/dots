@@ -1,6 +1,6 @@
 import { expect, test } from 'bun:test';
+import { Dot } from './dot';
 import {
-    Dot,
     TraitAcceleration2d,
     TraitMass,
     TraitPosition2d,
@@ -12,7 +12,7 @@ import {
     traitMass,
     traitPosition2d,
     traitVelocity2d,
-} from '.';
+} from './applicators';
 
 test('applyVelocity2d', () => {
     const dot: Dot<[TraitPosition2d, TraitVelocity2d]> = {

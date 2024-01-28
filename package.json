@@ -1,14 +1,18 @@
 {
   "name": "dots",
   "module": "src/index.ts",
-  "type": "module",
-  "scripts": {
-    "start": "bun run src/index.ts"
-  },
   "devDependencies": {
     "bun-types": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "tsc": "tsc --noEmit"
+  },
+  "type": "module",
+  "dependencies": {
+    "pixi.js": "^7.4.0"
   }
 }
